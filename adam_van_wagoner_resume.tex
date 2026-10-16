@@ -1,0 +1,195 @@
+%-------------------------
+% Resume in LateX
+% Author : Adam Van Wagoner
+% Template Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small #1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeItemPlain}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{{\Large Adam Van Wagoner}} & Email: \href{mailto:vanwagoneradam@gmail.com}{vanwagoneradam@gmail.com}\\
+  \href{https://adamvanw.dev/}{adamvanw.dev} & Mobile: \href{tel:+19565664528}{+1-956-566-4528} \\
+  \href{https://github.com/adamvanw}{github.com/adamvanw} & McAllen, TX 78501 \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Texas at San Antonio}{San Antonio, TX}
+      {Bachelor of Science in Computer Science; GPA: 3.96}{Aug 2023 -- Dec 2025}
+      \resumeSubSubheading{Concentration: Software Engineering}{}
+      \resumeSubSubheading{Transferred from Texas A\&M University (Aug 2021 -- May 2023)}{}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {\href{https://vanylrecords.com}{Vanyl Records}}{Urbana, IL}
+      {Full-Stack Developer, E-Commerce Platform}{Jul 2025 -- Present}
+      \resumeItemListStart
+        \resumeItemPlain
+          {Designed and built a Go JSON API on net/http for cart, checkout, catalog and admin endpoints, decoupling the site's services and securing them with database-backed cookie sessions, bcrypt admin auth and request size limits.}
+        \resumeItemPlain
+          {Integrated Stripe Checkout with a signature-verified webhook and idempotent INSERT IGNORE order writes, recording each purchase exactly once even if the customer never returns to the site.}
+        \resumeItemPlain
+          {Built a Go sync job that imports a Discogs collection into a 16-table normalized MySQL schema, replacing manual catalog entry for 1000+ records.}
+        \resumeItemPlain
+          {Generated 160px and 64px JPEG variants of Discogs photos stored in S3 and served through a regex-validated proxy that blocks arbitrary bucket key access, reducing image sizes by 90\%.}
+        \resumeItemPlain
+          {Automated refund, cancellation and tracking workflows with templated Mailgun emails, replacing manual customer emails from the administrator.}
+        \resumeItemPlain
+          {Wrote 60+ unit tests with go-sqlmock and testify, and configured GitHub Actions to run go vet and go test -race on every push and PR.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {University of Texas at San Antonio}{San Antonio, TX}
+      {Student Grader I}{Sep 2024 -- Dec 2025}
+      \resumeItemListStart
+        \resumeItemPlain
+          {Graded and gave detailed feedback to 400+ data structures students over three semesters.}
+        \resumeItemPlain
+          {Wrote Bash scripts around Valgrind to automate memory-error detection, enabling consistent feedback tied to course concepts.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {\href{https://github.com/adamvanw/flipfilter}{FlipFilter}}{}
+      {Developer}{Dec 2025}
+      \resumeItemListStart
+        \resumeItemPlain
+          {Built a media player in C and Raylib with an in-app file browser and real-time video playback through FFmpeg.}
+        \resumeItemPlain
+          {Wrote a custom GLSL duochromatic dither shader with user-selectable color schemes.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {\href{https://github.com/adamvanw/datahoarders_app}{Absolute Football Matches}}{}
+      {Database Designer, Application Developer (Team of 4)}{Jan 2025 -- May 2025}
+      \resumeItemListStart
+        \resumeItemPlain
+          {Analyzed ESPN's JSON REST API to identify the fields for players, coaches, teams and matches, and wrote a Python script that populates current-season data.}
+        \resumeItemPlain
+          {Normalized the data into a MySQL schema and wrote the Python ingestion pipeline that populates it.}
+        \resumeItemPlain
+          {Built an open-source Go and Raylib desktop client that connects to the database with user-supplied credentials, with scrollable lists and linked detail views for each entity.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%--------SKILLS------------
+\section{Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Languages}
+      {Go, C, C++, Java, Python, SQL, Bash}
+    \resumeSubItem{Web}
+      {HTML, TailwindCSS, JavaScript, Templ, REST APIs}
+    \resumeSubItem{Databases}
+      {MySQL/MariaDB, MongoDB}
+    \resumeSubItem{Platforms}
+      {AWS (S3), GCP, Cloudflare, Railway}
+    \resumeSubItem{Tools}
+      {Git, GitHub Actions, Stripe, Mailgun, FFmpeg}
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
