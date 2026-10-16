@@ -120,20 +120,22 @@
 
     \resumeSubheading
       {\href{https://vanylrecords.com}{Vanyl Records}}{Urbana, IL}
-      {Full-Stack Developer, E-Commerce Platform}{Jul 2025 -- Present}
+      {Full-Stack Developer, E-Commerce Platform (launching Nov 2026)}{Jul 2025 -- Present}
       \resumeItemListStart
         \resumeItemPlain
-          {Designed and built a Go JSON API on net/http for cart, checkout, catalog and admin endpoints, decoupling the site's services and securing them with database-backed cookie sessions, bcrypt admin auth and request size limits.}
+          {Built the full site solo: a Go JSON API on net/http for cart, checkout, catalog and admin, secured with database-backed cookie sessions, bcrypt admin auth and request size limits.}
+        \resumeItemPlain
+          {Built the storefront UI with Templ, Tailwind and vanilla JavaScript for catalog browsing, cart and checkout, with no frontend framework dependencies.}
         \resumeItemPlain
           {Integrated Stripe Checkout with a signature-verified webhook and idempotent INSERT IGNORE order writes, recording each purchase exactly once even if the customer never returns to the site.}
         \resumeItemPlain
           {Built a Go sync job that imports a Discogs collection into a 16-table normalized MySQL schema, replacing manual catalog entry for 1000+ records.}
         \resumeItemPlain
-          {Generated 160px and 64px JPEG variants of Discogs photos stored in S3 and served through a regex-validated proxy that blocks arbitrary bucket key access, reducing image sizes by 90\%.}
+          {Generated 160px and 64px JPEG variants of Discogs photos in S3, served through a regex-validated proxy that blocks arbitrary bucket key access, cutting image sizes by 90\%.}
         \resumeItemPlain
           {Automated refund, cancellation and tracking workflows with templated Mailgun emails, replacing manual customer emails from the administrator.}
         \resumeItemPlain
-          {Wrote 60+ unit tests with go-sqlmock and testify, and configured GitHub Actions to run go vet and go test -race on every push and PR.}
+          {Wrote 60+ unit tests with go-sqlmock and testify; set up GitHub Actions CI/CD that runs go vet and go test -race on every push and PR and deploys to production.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -141,9 +143,7 @@
       {Student Grader I}{Sep 2024 -- Dec 2025}
       \resumeItemListStart
         \resumeItemPlain
-          {Graded and gave detailed feedback to 400+ data structures students over three semesters.}
-        \resumeItemPlain
-          {Wrote Bash scripts around Valgrind to automate memory-error detection, enabling consistent feedback tied to course concepts.}
+          {Graded and gave feedback to 400+ data structures students over three semesters; wrote Bash scripts around Valgrind to automate memory-error detection.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -153,24 +153,24 @@
 \section{Projects}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {\href{https://github.com/adamvanw/flipfilter}{FlipFilter}}{}
-      {Developer}{Dec 2025}
+      {\href{https://github.com/adamvanw/datahoarders_app}{Absolute Football Matches}} {Football Statistics Database and Desktop App}
+      {Database Designer, Application Developer (Team of 4)}{Jan 2025 -- May 2025}
+      \resumeItemListStart
+        \resumeItemPlain
+          {Analyzed ESPN's JSON REST API to identify fields for players, coaches, teams and matches, and wrote a Python script that populates current-season data.}
+        \resumeItemPlain
+          {Normalized the data into a MySQL schema and wrote the Python ingestion pipeline that populates it.}
+        \resumeItemPlain
+          {Built an open-source Go and Raylib desktop client that connects to the database with user-supplied credentials, with scrollable lists and linked detail views for each entity.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {\href{https://github.com/adamvanw/flipfilter}{FlipFilter}}{Dithered Video Player}
+      {Solo Developer}{Dec 2025}
       \resumeItemListStart
         \resumeItemPlain
           {Built a media player in C and Raylib with an in-app file browser and real-time video playback through FFmpeg.}
         \resumeItemPlain
           {Wrote a custom GLSL duochromatic dither shader with user-selectable color schemes.}
-      \resumeItemListEnd
-    \resumeSubheading
-      {\href{https://github.com/adamvanw/datahoarders_app}{Absolute Football Matches}}{}
-      {Database Designer, Application Developer (Team of 4)}{Jan 2025 -- May 2025}
-      \resumeItemListStart
-        \resumeItemPlain
-          {Analyzed ESPN's JSON REST API to identify the fields for players, coaches, teams and matches, and wrote a Python script that populates current-season data.}
-        \resumeItemPlain
-          {Normalized the data into a MySQL schema and wrote the Python ingestion pipeline that populates it.}
-        \resumeItemPlain
-          {Built an open-source Go and Raylib desktop client that connects to the database with user-supplied credentials, with scrollable lists and linked detail views for each entity.}
       \resumeItemListEnd
   \resumeSubHeadingListEnd
 
@@ -181,13 +181,13 @@
     \resumeSubItem{Languages}
       {Go, C, C++, Java, Python, SQL, Bash}
     \resumeSubItem{Web}
-      {HTML, TailwindCSS, JavaScript, Templ, REST APIs}
+      {HTML, CSS (Tailwind), JavaScript, Templ, REST APIs}
     \resumeSubItem{Databases}
       {MySQL/MariaDB, MongoDB}
     \resumeSubItem{Platforms}
       {AWS (S3), GCP, Cloudflare, Railway}
     \resumeSubItem{Tools}
-      {Git, GitHub Actions, Stripe, Mailgun, FFmpeg}
+      {Git, GitHub Actions (CI/CD), Stripe, Mailgun, FFmpeg}
   \resumeSubHeadingListEnd
 
 
